@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Boss Muda abadi | Premium Indonesian Fresh Fruit Exporter</title>
+    <meta name="description" content="Trusted Indonesian Fresh Fruit Exporter. We supply premium quality tropical fruits directly from Indonesia to global markets.">
+    <meta name="keywords" content="Indonesian fruit exporter, Durian supplier Indonesia, Mangosteen exporter, Mango supplier Indonesia, Salak exporter Indonesia, Tropical fruit supplier, PT Boss Muda abadi">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS Setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064E3B', /* Deep Emerald Green */
+                        primaryDark: '#022C22',
+                        gold: '#D4AF37',    /* Premium Gold */
+                        goldLight: '#F3E5AB',
+                        goldDark: '#AA8C2C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1920&auto=format&fit=crop')",
+                        'world-map': "url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Hide scrollbar for gallery but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Language Toggle Transition */
+        .lang-id { display: none; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50 selection:bg-gold selection:text-white relative">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-gold">
+                        <i class="fas fa-leaf text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif font-bold text-xl text-primary leading-tight uppercase tracking-wide">PT. Boss Muda abadi</span>
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Premium Fruit Exporter</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">About Us</a>
+                    <a href="#products" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Products</a>
+                    <a href="#advantages" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Why Us</a>
+                    <a href="#markets" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Markets</a>
+                    <a href="#gallery" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Gallery</a>
+                    
+                    <!-- Language Toggle -->
+                    <div class="flex items-center gap-2 text-sm border-l pl-6 border-gray-300">
+                        <button onclick="toggleLanguage('en')" id="btn-en" class="font-bold text-primary">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button onclick="toggleLanguage('id')" id="btn-id" class="text-gray-400 hover:text-primary">ID</button>
+                    </div>
+
+                    <a href="#contact" class="bg-gold hover:bg-goldDark text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        <span class="lang-en">Inquiry Now</span>
+                        <span class="lang-id">Hubungi Kami</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <div class="flex items-center gap-2 text-xs font-bold">
+                        <button onclick="toggleLanguage('en')" id="btn-en-mob" class="text-primary">EN</button>
+                        <span class="text-gray-300">|</span>
+                        <button onclick="toggleLanguage('id')" id="btn-id-mob" class="text-gray-400">ID</button>
+                    </div>
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">About Us</a>
+                <a href="#products" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Products</a>
+                <a href="#advantages" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Why Us</a>
+                <a href="#markets" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Markets</a>
+                <a href="#gallery" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Gallery</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-bold text-primary bg-green-50 rounded-md mt-4">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-32 lg:pt-32 lg:pb-48 bg-primaryDark overflow-hidden flex items-center min-h-[90vh]">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primaryDark/90 to-primary/60"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur border border-white/20 mb-6">
+                    <span class="flex h-2 w-2 rounded-full bg-gold"></span>
+                    <span class="text-white text-xs font-semibold tracking-wider uppercase">Global Export Ready</span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                    <span class="lang-en">Trusted Indonesian<br><span class="text-gold">Fresh Fruit</span> Exporter</span>
+                    <span class="lang-id">Eksportir Buah Segar<br><span class="text-gold">Terpercaya</span> Indonesia</span>
+                </h1>
+                
+                <p class="text-lg lg:text-xl text-gray-200 mb-10 leading-relaxed font-light">
+                    <span class="lang-en">We supply premium quality tropical fruits directly from Indonesia to global markets with strict quality control and reliable shipment.</span>
+                    <span class="lang-id">Kami menyuplai buah tropis kualitas premium langsung dari Indonesia ke pasar global dengan kontrol kualitas ketat dan pengiriman handal.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#products" class="bg-gold hover:bg-goldDark text-white px-8 py-4 rounded-full text-center font-bold text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] transform hover:-translate-y-1">
+                        <i class="fas fa-box-open mr-2"></i> View Products
+                    </a>
+                    <a href="#contact" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full text-center font-bold text-lg transition-all transform hover:-translate-y-1">
+                        <i class="fas fa-envelope mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Stats Banner -->
+        <div class="absolute bottom-0 left-0 w-full transform translate-y-1/2 z-20 hidden md:block">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="glass-panel rounded-2xl shadow-2xl p-8 grid grid-cols-4 divide-x divide-gray-200 border border-gray-100">
+                    <div class="text-center px-4">
+                        <h3 class="text-4xl font-serif font-bold text-primary mb-1">10+</h3>
+                        <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Years Experience</p>
+                    </div>
+                    <div class="text-center px-4">
+                        <h3 class="text-4xl font-serif font-bold text-primary mb-1">15+</h3>
+                        <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Countries Served</p>
+                    </div>
+                    <div class="text-center px-4">
+                        <h3 class="text-4xl font-serif font-bold text-primary mb-1">5K+</h3>
+                        <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Tons Delivered</p>
+                    </div>
+                    <div class="text-center px-4">
+                        <h3 class="text-4xl font-serif font-bold text-primary mb-1">200+</h3>
+                        <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Partner Farmers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="pt-24 pb-16 md:pt-40 md:pb-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gold rounded-3xl transform translate-x-4 translate-y-4 opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1591590050858-472097e3352c?q=80&w=800&auto=format&fit=crop" alt="Indonesian Farming and Sorting" class="relative rounded-3xl shadow-xl w-full h-[500px] object-cover">
+                    <!-- Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-2xl shadow-xl flex items-center gap-4">
+                        <i class="fas fa-award text-4xl text-gold"></i>
+                        <div>
+                            <p class="font-bold text-xl">Export Grade</p>
+                            <p class="text-sm opacity-80">Certified Quality</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <h4 class="text-gold font-bold tracking-wider uppercase text-sm mb-2">About Our Company</h4>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-primary mb-6 leading-tight">
+                        <span class="lang-en">Connecting Indonesia's Best to the World</span>
+                        <span class="lang-id">Menghubungkan yang Terbaik dari Indonesia ke Dunia</span>
+                    </h2>
+                    <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                        <span class="lang-en">We are a premier fresh fruit exporter from Indonesia focusing on premium quality, timely delivery, and long-term business relationships. We collaborate closely with local farmers and trusted packing houses to meet strict international market standards.</span>
+                        <span class="lang-id">Kami adalah eksportir buah segar utama dari Indonesia yang berfokus pada kualitas premium, pengiriman tepat waktu, dan hubungan bisnis jangka panjang. Bekerja sama dengan petani lokal untuk memenuhi standar internasional.</span>
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Quality Assurance</h4>
+                                <p class="text-sm text-gray-500">Strict sorting & QC processes.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-ship text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Global Shipping</h4>
+                                <p class="text-sm text-gray-500">Air freight & sea freight experts.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-hand-holding-dollar text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Competitive Pricing</h4>
+                                <p class="text-sm text-gray-500">Direct sourcing from farmers.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-handshake text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Professional Service</h4>
+                                <p class="text-sm text-gray-500">Fast response & clear documents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h4 class="text-gold font-bold tracking-wider uppercase text-sm mb-2">Our Premium Selection</h4>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-6">Explore Our Products</h2>
+                <p class="text-gray-600 text-lg">We source only the highest export-grade fruits, carefully harvested and packaged to preserve their natural freshness and flavor upon arrival.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1: Durian -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596395819057-cb31a1e4bf14?q=80&w=600&auto=format&fit=crop" alt="Premium Durian" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow">Best Seller</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif font-bold text-primary mb-2">Premium Durian</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-3">Fresh premium Indonesian durian with rich taste and strong aroma. Available frozen (paste/whole) or fresh based on destination.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Origin</span>
+                                <span class="font-semibold text-gray-900">Sumatra / Java</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Grade</span>
+                                <span class="font-semibold text-gray-900">Export Grade A</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Packaging</span>
+                                <span class="font-semibold text-gray-900">Custom Box / Vacuum</span>
+                            </div>
+                            <div class="flex justify-between text-sm pb-1">
+                                <span class="text-gray-500">Season</span>
+                                <span class="font-semibold text-gray-900 text-right">Oct - Feb<br>Jun - Aug</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" onclick="setProductValue('Durian')" class="block w-full text-center bg-green-50 hover:bg-primary text-primary hover:text-white border border-primary/20 hover:border-primary font-bold py-3 rounded-xl transition-colors">
+                            <i class="fab fa-whatsapp mr-1"></i> Send Inquiry
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Manggis -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?q=80&w=600&auto=format&fit=crop" alt="Premium Mangosteen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif font-bold text-primary mb-2">Mangosteen</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-3">Sweet and juicy mangosteen with premium export grade sorting. Known as the "Queen of Fruits" with deep purple rind and snow-white flesh.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Origin</span>
+                                <span class="font-semibold text-gray-900">Java / Bali</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Grade</span>
+                                <span class="font-semibold text-gray-900">Super Premium</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Packaging</span>
+                                <span class="font-semibold text-gray-900">Plastic Basket / Carton</span>
+                            </div>
+                            <div class="flex justify-between text-sm pb-1">
+                                <span class="text-gray-500">Season</span>
+                                <span class="font-semibold text-gray-900 text-right">Nov - Mar</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" onclick="setProductValue('Mangosteen')" class="block w-full text-center bg-green-50 hover:bg-primary text-primary hover:text-white border border-primary/20 hover:border-primary font-bold py-3 rounded-xl transition-colors">
+                            <i class="fab fa-whatsapp mr-1"></i> Send Inquiry
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Mangga -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553279768-865429fd0084?q=80&w=600&auto=format&fit=crop" alt="Premium Mango" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif font-bold text-primary mb-2">Tropical Mango</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-3">Selected tropical mangoes (Harumanis/Gedong Gincu) with excellent sweetness, vibrant color, and incredible freshness.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Origin</span>
+                                <span class="font-semibold text-gray-900">West / East Java</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Grade</span>
+                                <span class="font-semibold text-gray-900">Export Grade A</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Packaging</span>
+                                <span class="font-semibold text-gray-900">Corrugated Box</span>
+                            </div>
+                            <div class="flex justify-between text-sm pb-1">
+                                <span class="text-gray-500">Season</span>
+                                <span class="font-semibold text-gray-900 text-right">Aug - Dec</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" onclick="setProductValue('Mango')" class="block w-full text-center bg-green-50 hover:bg-primary text-primary hover:text-white border border-primary/20 hover:border-primary font-bold py-3 rounded-xl transition-colors">
+                            <i class="fab fa-whatsapp mr-1"></i> Send Inquiry
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Salak -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Salak generic image placeholder using exotic pattern since salak specifically is rare on Unsplash -->
+                        <img src="https://images.unsplash.com/photo-1631481546875-181512dbbce1?q=80&w=600&auto=format&fit=crop" alt="Premium Salak (Snake Fruit)" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-serif font-bold text-primary mb-2">Salak (Snake Fruit)</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-3">Fresh Indonesian snake fruit (Salak Pondoh) known for its crunchy texture, unique sweet flavor, and distinct scaly skin.</p>
+                        
+                        <div class="space-y-2 mb-6">
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Origin</span>
+                                <span class="font-semibold text-gray-900">Yogyakarta / Bali</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Grade</span>
+                                <span class="font-semibold text-gray-900">Export Grade</span>
+                            </div>
+                            <div class="flex justify-between text-sm border-b border-gray-100 pb-1">
+                                <span class="text-gray-500">Packaging</span>
+                                <span class="font-semibold text-gray-900">Plastic Crate / Box</span>
+                            </div>
+                            <div class="flex justify-between text-sm pb-1">
+                                <span class="text-gray-500">Season</span>
+                                <span class="font-semibold text-gray-900 text-right">Year Round</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" onclick="setProductValue('Salak')" class="block w-full text-center bg-green-50 hover:bg-primary text-primary hover:text-white border border-primary/20 hover:border-primary font-bold py-3 rounded-xl transition-colors">
+                            <i class="fab fa-whatsapp mr-1"></i> Send Inquiry
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="advantages" class="py-20 bg-primaryDark text-white relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold rounded-full filter blur-[100px] opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary rounded-full filter blur-[100px] opacity-50 transform -translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Why Partner With Us?</h2>
+                <p class="text-gray-300 text-lg">We simplify the import process for you by guaranteeing quality, reliable logistics, and transparent communication.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                    <div class="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center text-gold mb-6">
+                        <i class="fas fa-tractor text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Direct Sourcing</h3>
+                    <p class="text-gray-400">We work directly with local farmers, ensuring fair trade practices and full traceability of our fruits.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                    <div class="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center text-gold mb-6">
+                        <i class="fas fa-microscope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Export Quality Sorting</h3>
+                    <p class="text-gray-400">Every single fruit passes rigorous quality control standards for size, brix level, and visual perfection.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                    <div class="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center text-gold mb-6">
+                        <i class="fas fa-tags text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Competitive Pricing</h3>
+                    <p class="text-gray-400">By cutting out middle-men, we offer highly competitive FOB and CIF pricing for bulk container shipments.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                    <div class="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center text-gold mb-6">
+                        <i class="fas fa-file-signature text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Reliable Documentation</h3>
+                    <p class="text-gray-400">Phytosanitary certificates, Certificate of Origin, and all export clearance docs handled professionally.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                    <div class="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center text-gold mb-6">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fast Response Service</h3>
+                    <p class="text-gray-400">Our dedicated B2B sales team is available 24/7 to provide updates, quotes, and logistical tracking.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors">
+                    <div class="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center text-gold mb-6">
+                        <i class="fas fa-box text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Packaging</h3>
+                    <p class="text-gray-400">We accommodate private label boxing, specialized weights, and specific cold-chain packaging requests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Markets Section -->
+    <section id="markets" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/3">
+                    <h4 class="text-gold font-bold tracking-wider uppercase text-sm mb-2">Global Reach</h4>
+                    <h2 class="text-4xl font-serif font-bold text-primary mb-6">Our Export Markets</h2>
+                    <p class="text-gray-600 mb-8">We successfully export our premium fruits to various regions globally, adhering strictly to each country's import regulations and standards.</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-gold text-xl w-6"></i>
+                            <span class="text-lg font-medium text-gray-800">China & Hong Kong</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-gold text-xl w-6"></i>
+                            <span class="text-lg font-medium text-gray-800">Singapore & Malaysia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-gold text-xl w-6"></i>
+                            <span class="text-lg font-medium text-gray-800">UAE & Saudi Arabia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-gold text-xl w-6"></i>
+                            <span class="text-lg font-medium text-gray-800">Europe (Selected Countries)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-globe text-gold text-xl w-6"></i>
+                            <span class="text-lg font-medium text-gray-800">Expanding to more...</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-10">
+                         <a href="#contact" class="inline-block bg-primary hover:bg-primaryDark text-white px-8 py-4 rounded-full text-center font-bold transition-all shadow-lg">
+                            Become a Partner
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3 w-full relative">
+                    <!-- Stylized Map Placeholder using a faint background approach -->
+                    <div class="w-full h-[400px] bg-world-map bg-no-repeat bg-contain bg-center opacity-40"></div>
+                    <!-- Map Pin Overlays -->
+                    <div class="absolute top-[30%] right-[30%] w-4 h-4 bg-gold rounded-full animate-ping"></div>
+                    <div class="absolute top-[30%] right-[30%] w-4 h-4 bg-primary rounded-full border-2 border-white"></div>
+
+                    <div class="absolute top-[45%] right-[20%] w-3 h-3 bg-gold rounded-full animate-ping" style="animation-delay: 0.5s"></div>
+                    <div class="absolute top-[45%] right-[20%] w-3 h-3 bg-primary rounded-full border-2 border-white"></div>
+                    
+                    <div class="absolute top-[40%] right-[40%] w-3 h-3 bg-gold rounded-full animate-ping" style="animation-delay: 1s"></div>
+                    <div class="absolute top-[40%] right-[40%] w-3 h-3 bg-primary rounded-full border-2 border-white"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h4 class="text-gold font-bold tracking-wider uppercase text-sm mb-2">Inside Our Operations</h4>
+                <h2 class="text-4xl font-serif font-bold text-primary">From Farm to Container</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="col-span-2 row-span-2 relative overflow-hidden rounded-xl group h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1591590050858-472097e3352c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Sorting Process">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Strict Sorting Process</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group h-[192px]">
+                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Fresh Harvest">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-bold">Fresh Harvest</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl group h-[192px]">
+                    <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Packing Facility">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-bold">Packing Facility</span>
+                    </div>
+                </div>
+                <div class="col-span-2 relative overflow-hidden rounded-xl group h-[192px]">
+                    <!-- Using generic logistics image as placeholder for container loading -->
+                    <img src="https://images.unsplash.com/photo-1494412519320-aa3da3c114cb?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Container Loading">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-bold text-lg">Container Loading & Shipment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Repeated CTA -->
+    <section class="py-24 bg-primary text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <i class="fas fa-quote-left text-4xl text-gold mb-6 opacity-50"></i>
+            <h2 class="text-3xl md:text-4xl font-serif italic mb-8">"PT. Boss Muda abadi has been our reliable partner for premium Indonesian fruits. Their durians and mangosteens always arrive in perfect condition. Exceptional quality and professionalism."</h2>
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary font-bold text-xl">L</div>
+                <div class="text-left">
+                    <p class="font-bold">Li Wei</p>
+                    <p class="text-sm text-gold">Fruit Importer, China</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gold text-primaryDark text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <h2 class="text-2xl md:text-3xl font-bold font-serif">Ready to import premium Indonesian fruits?</h2>
+            <a href="#contact" class="bg-primaryDark text-white px-8 py-4 rounded-full text-center font-bold hover:bg-black transition-colors shadow-lg">
+                Contact Us Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-gold font-bold tracking-wider uppercase text-sm mb-2">Get In Touch</h4>
+                    <h2 class="text-4xl font-serif font-bold text-primary mb-6">Let's Build a Business Partnership</h2>
+                    <p class="text-gray-600 mb-10 text-lg">Whether you need a sample or a full container load, our team is ready to assist you with competitive quotes and detailed product specifications.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Head Office & Packing House</h4>
+                                <p class="text-gray-600">Jakarta / West Java, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">Email Us</h4>
+                                <p class="text-gray-600">export@bossmudaabadi.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 text-primary">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">WhatsApp (24/7)</h4>
+                                <p class="text-gray-600">+62 812-XXXX-XXXX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
+                    <form id="inquiryForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Country *</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp Number *</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Product of Interest</label>
+                            <select id="productSelect" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-white">
+                                <option value="">Select a product...</option>
+                                <option value="Durian">Premium Durian</option>
+                                <option value="Mangosteen">Mangosteen</option>
+                                <option value="Mango">Tropical Mango</option>
+                                <option value="Salak">Salak (Snake Fruit)</option>
+                                <option value="Multiple/Other">Multiple Products / Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message / Requirements</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder-gray-400" placeholder="Please include expected volume, packaging preferences, and destination port..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary hover:bg-primaryDark text-white py-4 rounded-xl font-bold text-lg transition-colors shadow-md">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primaryDark text-white pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary">
+                            <i class="fas fa-leaf text-xl"></i>
+                        </div>
+                        <span class="font-serif font-bold text-xl uppercase tracking-wide">PT. Boss Muda<br>abadi</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Trusted supplier, exporter, and distributor of premium fresh fruits from Indonesia to the world.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#about" class="hover:text-gold transition-colors">About Company</a></li>
+                        <li><a href="#products" class="hover:text-gold transition-colors">Product Catalog</a></li>
+                        <li><a href="#advantages" class="hover:text-gold transition-colors">Why Choose Us</a></li>
+                        <li><a href="#markets" class="hover:text-gold transition-colors">Export Markets</a></li>
+                        <li><a href="#gallery" class="hover:text-gold transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Our Products</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#products" onclick="setProductValue('Durian')" class="hover:text-gold transition-colors">Premium Durian</a></li>
+                        <li><a href="#products" onclick="setProductValue('Mangosteen')" class="hover:text-gold transition-colors">Mangosteen</a></li>
+                        <li><a href="#products" onclick="setProductValue('Mango')" class="hover:text-gold transition-colors">Tropical Mango</a></li>
+                        <li><a href="#products" onclick="setProductValue('Salak')" class="hover:text-gold transition-colors">Salak (Snake Fruit)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-gold"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-phone mt-1 text-gold"></i>
+                            <span>+62 812-XXXX-XXXX</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-envelope mt-1 text-gold"></i>
+                            <span>export@bossmudaabadi.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 PT. Boss Muda abadi. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Designed for Global Export.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281200000000?text=Hello,%20I%20am%20interested%20in%20importing%20fruits%20from%20PT%20Boss%20Muda%20abadi." target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-110 transition-all z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Custom Modal for Form Submission -->
+    <div id="successModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl transform scale-95 transition-all">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                <i class="fas fa-check text-4xl"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">Inquiry Sent!</h3>
+            <p class="text-gray-600 mb-8">Thank you for contacting PT. Boss Muda abadi. Our export team will get back to you shortly.</p>
+            <button onclick="closeModal()" class="w-full bg-primary hover:bg-primaryDark text-white font-bold py-3 rounded-xl transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Sticky Navbar effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('bg-white/95');
+                nav.classList.add('bg-white');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.remove('bg-white');
+                nav.classList.add('bg-white/95');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Pre-fill Product Select on Inquiry Button Click
+        function setProductValue(productName) {
+            const select = document.getElementById('productSelect');
+            if(select) {
+                select.value = productName;
+            }
+        }
+
+        // Handle Form Submit with Custom Modal
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            // Show modal
+            const modal = document.getElementById('successModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Animate scale
+            setTimeout(() => {
+                modal.firstElementChild.classList.remove('scale-95');
+                modal.firstElementChild.classList.add('scale-100');
+            }, 10);
+
+            // Reset form
+            document.getElementById('inquiryForm').reset();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 200);
+        }
+
+        // Simple Language Toggle Simulation (En/Id visibility)
+        function toggleLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const idElements = document.querySelectorAll('.lang-id');
+            
+            const btnEn = document.getElementById('btn-en');
+            const btnId = document.getElementById('btn-id');
+            const btnEnMob = document.getElementById('btn-en-mob');
+            const btnIdMob = document.getElementById('btn-id-mob');
+
+            if (lang === 'en') {
+                enElements.forEach(el => el.style.display = 'inline-block');
+                idElements.forEach(el => el.style.display = 'none');
+                
+                // Update Desktop buttons
+                btnEn.classList.add('font-bold', 'text-primary');
+                btnEn.classList.remove('text-gray-400');
+                btnId.classList.remove('font-bold', 'text-primary');
+                btnId.classList.add('text-gray-400');
+
+                // Update Mobile buttons
+                btnEnMob.classList.add('font-bold', 'text-primary');
+                btnEnMob.classList.remove('text-gray-400');
+                btnIdMob.classList.remove('font-bold', 'text-primary');
+                btnIdMob.classList.add('text-gray-400');
+
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                idElements.forEach(el => el.style.display = 'inline-block');
+                
+                // Update Desktop buttons
+                btnId.classList.add('font-bold', 'text-primary');
+                btnId.classList.remove('text-gray-400');
+                btnEn.classList.remove('font-bold', 'text-primary');
+                btnEn.classList.add('text-gray-400');
+
+                 // Update Mobile buttons
+                 btnIdMob.classList.add('font-bold', 'text-primary');
+                 btnIdMob.classList.remove('text-gray-400');
+                 btnEnMob.classList.remove('font-bold', 'text-primary');
+                 btnEnMob.classList.add('text-gray-400');
+            }
+        }
+        
+        // Ensure initial language state is set
+        document.addEventListener('DOMContentLoaded', () => {
+             toggleLanguage('en');
+        });
+
+    </script>
+</body>
+</html>
